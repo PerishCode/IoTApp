@@ -1,0 +1,16 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".gitignore": true,
+    "app.*": true,
+    "*.key": true,
+    "project.config.json": true,
+    "sitemap.json": true,
+    ".prettierrc.yml": true,
+    ".vscode": true
+  }
+}
