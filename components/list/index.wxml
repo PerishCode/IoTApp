@@ -1,0 +1,11 @@
+<view class="list">
+	<view
+	 wx:for="{{source}}"
+	 wx:key="id"
+	 data-id="{{item.id}}"
+	 bind:tap="onItemTap"
+	>
+		{{item.id}} - {{item.name}}
+	</view>
+</view>
+

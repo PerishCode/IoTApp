@@ -1,0 +1,6 @@
+<!-- index.wxml -->
+<view class="container">
+	<view class="title">设备列表</view>
+	<list source="{{devices}}" bind:itemTap="toDetail" />
+</view>
+
