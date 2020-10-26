@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "list": "/components/list/index"
+    "grid": "/components/iview/grid/index",
+    "grid-item": "/components/iview/grid-item/index",
+    "iconfont": "/components/iconfont/iconfont",
+    "item": "/components/item/index"
   }
 }

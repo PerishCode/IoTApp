@@ -1,4 +1,5 @@
 <view class="container">
+	<view>详细信息</view>
 	<view wx:if="{{device}}">{{device.name}}</view>
 </view>
 

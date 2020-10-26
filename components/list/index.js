@@ -11,4 +11,5 @@ Component({
       this.triggerEvent('itemTap', id)
     },
   },
+  externalClasses: ['side-class'],
 })

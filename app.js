@@ -8,5 +8,7 @@ App({
       },
     })
   },
-  globalData: {},
+  globalData: {
+    serverAddress: 'http://172.27.133.39:7777',
+  },
 })

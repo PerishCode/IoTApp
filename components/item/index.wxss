@@ -1,0 +1,4 @@
+.item .icon,
+.item .title {
+  display: inline;
+}

@@ -1,6 +1,11 @@
 <!-- index.wxml -->
 <view class="container">
-	<view class="title">设备列表</view>
-	<list source="{{devices}}" bind:itemTap="toDetail" />
+	<!-- <view class="title">设备列表</view> -->
+	<view class="list">
+		<view class="item" wx:for="{{devices}}" wx:key="id">
+			<iconfont name="{{item.icon}}" size="50" />
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
 </view>
 

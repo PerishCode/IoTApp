@@ -1,23 +1,20 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const {
+  globalData: { serverAddress },
+} = getApp()
 
 Page({
   data: {
     devices: [],
   },
   onLoad: function () {
-    this.setData({
-      success: '已发起请求',
-    })
-
     wx.request({
-      url: 'http://192.168.31.29:7777/api/devices',
+      url: `${serverAddress}/api/devices`,
       method: 'GET',
-      success: (res) => {
+      success: ({ data }) => {
         this.setData({
-          success: '请求成功',
-          devices: res.data,
+          devices: data,
         })
       },
     })
