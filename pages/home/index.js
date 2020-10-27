@@ -8,8 +8,9 @@ Page({
   data: {
     devices: [],
     mode: 'grid',
+    gridIconSize: 50,
   },
-  onLoad: function () {
+  onLoad() {
     wx.request({
       url: `${serverAddress}/api/devices`,
       method: 'GET',
@@ -20,7 +21,11 @@ Page({
       },
     })
   },
-  onItemTap({ id }) {
+  onItemTap({
+    target: {
+      dataset: { id },
+    },
+  }) {
     wx.navigateTo({
       url: `/pages/detail/index?id=${id}`,
     })
@@ -29,6 +34,11 @@ Page({
     const { mode } = this.data
     this.setData({
       mode: mode === 'list' ? 'grid' : 'list',
+    })
+  },
+  toMessage() {
+    wx.navigateTo({
+      url: `/pages/message/index`,
     })
   },
 })

@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
+    // messagequeue | List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
     name: {
       type: String,
     },

@@ -1,31 +1,25 @@
 <!-- index.wxml -->
 <view class="container">
-	<!-- <view class="title">设备列表</view> -->
-	<view class="list" wx:if="{{mode==='grid'}}">
-		<view class="item" wx:for="{{devices}}" wx:key="id">
-			<iconfont
-			 name="{{item.icon}}"
-			 size="50"
-			 data-id="{{item.id}}"
-			 bind:tap="onItemTap"
-			/>
-			<view class="name">{{item.name}}</view>
+		<view class="title">设备列表</view>
+		<view class="grid" wx:if="{{mode==='grid'}}">
+				<view class="item" wx:for="{{devices}}" wx:key="index" data-id="{{item.id}}" bind:tap="onItemTap">
+						<view style="width:{{gridIconSize}}px; margin-top:6px;">
+								<iconfont name="{{item.icon}}" size="{{gridIconSize}}" />
+						</view>
+						<view class="name">{{item.name}}</view>
+				</view>
 		</view>
-	</view>
-	<view class="grid" wx:else>
-		<view class="item" wx:for="{{devices}}" wx:key="id">
-			<iconfont
-			 name="{{item.icon}}"
-			 size="50"
-			 data-id="{{item.id}}"
-			 bind:tap="onItemTap"
-			/>
-			<view class="name">{{item.name}}</view>
+		<view class="list" wx:else>
+				<view class="item" wx:for="{{devices}}" wx:key="index" data-id="{{item.id}}" bind:tap="onItemTap">
+						<iconfont name="{{item.icon}}" size="50" />
+						<view class="name">{{item.id}}-{{item.name}}</view>
+				</view>
 		</view>
-	</view>
-	<view class="mode" bind:tap="changeMode">
-		<iconfont name="grid" wx:if="{{mode==='list'}}" />
-		<iconfont name="List" wx:else />
-	</view>
+		<view class="mode" bind:tap="changeMode">
+				<iconfont name="grid" wx:if="{{mode==='list'}}" />
+				<iconfont name="List" wx:else />
+		</view>
+		<view class="message" bind:tap="toMessage">
+				<iconfont name="messagequeue" />
+		</view>
 </view>
-

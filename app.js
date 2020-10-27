@@ -1,14 +1,19 @@
 //app.js
 App({
   onLaunch: function () {
-    // 登录
-    wx.login({
-      success: (res) => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      },
-    })
+    this.globalData.socketConnected || this.connectSocket()
   },
+
   globalData: {
-    serverAddress: 'http://192.168.80.124:7777',
+    serverAddress: 'http://192.168.31.202:7777',
+    MQAddress: 'ws://114.212.84.64:8083/webSocket',
+    socketConnected: false,
+  },
+
+  connectSocket() {
+    wx.onSocketOpen(() => {
+      this.globalData.socketConnected = true
+    })
+    wx.connectSocket({ url: this.globalData.MQAddress })
   },
 })
