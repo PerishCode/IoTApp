@@ -7,6 +7,7 @@ const {
 Page({
   data: {
     devices: [],
+    mode: 'grid',
   },
   onLoad: function () {
     wx.request({
@@ -19,9 +20,15 @@ Page({
       },
     })
   },
-  toDetail({ detail: id }) {
+  onItemTap({ id }) {
     wx.navigateTo({
       url: `/pages/detail/index?id=${id}`,
+    })
+  },
+  changeMode() {
+    const { mode } = this.data
+    this.setData({
+      mode: mode === 'list' ? 'grid' : 'list',
     })
   },
 })

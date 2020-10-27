@@ -9,6 +9,6 @@ App({
     })
   },
   globalData: {
-    serverAddress: 'http://172.27.133.39:7777',
+    serverAddress: 'http://192.168.80.124:7777',
   },
 })

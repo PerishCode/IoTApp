@@ -1,11 +1,31 @@
 <!-- index.wxml -->
 <view class="container">
 	<!-- <view class="title">设备列表</view> -->
-	<view class="list">
+	<view class="list" wx:if="{{mode==='grid'}}">
 		<view class="item" wx:for="{{devices}}" wx:key="id">
-			<iconfont name="{{item.icon}}" size="50" />
+			<iconfont
+			 name="{{item.icon}}"
+			 size="50"
+			 data-id="{{item.id}}"
+			 bind:tap="onItemTap"
+			/>
 			<view class="name">{{item.name}}</view>
 		</view>
+	</view>
+	<view class="grid" wx:else>
+		<view class="item" wx:for="{{devices}}" wx:key="id">
+			<iconfont
+			 name="{{item.icon}}"
+			 size="50"
+			 data-id="{{item.id}}"
+			 bind:tap="onItemTap"
+			/>
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
+	<view class="mode" bind:tap="changeMode">
+		<iconfont name="grid" wx:if="{{mode==='list'}}" />
+		<iconfont name="List" wx:else />
 	</view>
 </view>
 
