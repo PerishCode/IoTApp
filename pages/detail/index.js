@@ -20,7 +20,7 @@ Page({
       },
     ],
   },
-  onLoad({ id }) {
+  onLoad({ id = 'A' }) {
     wx.request({
       url: `${serverAddress}/api/devices/${id}`,
       success: ({ data }) => {

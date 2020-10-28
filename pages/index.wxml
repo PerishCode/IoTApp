@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="navigator" style="position:absolute; top:{{statusBarHeight}}px; line-height:44px;">
+    导航栏
+  </view>
+  <view class="page" style="position:absolute; top:{{navigationBarHeight}}px; height:calc(100% - {{navigationBarHeight}}px); width:100%;">
+    <test wx:if="{{currentPage==='test'}}" />
+    <view wx:if="{{currentPage==='ding'}}" bind:tap="back">ding</view>
+  </view>
+</view>

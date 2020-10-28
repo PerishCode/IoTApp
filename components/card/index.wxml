@@ -1,0 +1,9 @@
+<view class="card {{collapse?'collapsed':'expended'}}">
+  <view class="title" bind:tap="changeMode">{{title}}</view>
+  <view class="icon" bind:tap="changeMode">
+    <iconfont name="Up" />
+  </view>
+  <view class="content">
+    <slot />
+  </view>
+</view>

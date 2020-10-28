@@ -1,10 +1,7 @@
 {
-  "pages": ["pages/home/index", "pages/detail/index"],
+  "pages": ["pages/index"],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "人机物融合演示",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

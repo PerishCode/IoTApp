@@ -1,11 +1,16 @@
 <view class="container">
-	<view>详细信息</view>
-	<view wx:if="{{device}}">{{device.name}}</view>
-	<view class="list" wx:for="{{methods}}" wx:key="index">
-		<view>{{item.method}}</view>
-		<view wx:if="{{item.method==='getStatus'}}">
-			<button bind:tap="uploadFile">一个按钮</button>
-		</view>
-	</view>
+		<view class="title">设备详情</view>
+		<card title="基本信息">
+				<view class="list">
+						<view class="item">
+								<view class="index">设备名称</view>
+								<view class="value">{{device.name}}</view>
+						</view>
+						<view class="item">
+								<view class="index">设备状态</view>
+								<view class="value">{{device.bound?'忙碌':'空闲'}}</view>
+						</view>
+				</view>
+		</card>
+		<card title="接口信息"></card>
 </view>
-
