@@ -1,45 +1,38 @@
-//index.js
-//获取应用实例
 const {
   globalData: { serverAddress },
 } = getApp()
 
-Page({
+Component({
   data: {
     devices: [],
     mode: 'list',
     gridIconSize: 50,
     listIconSize: 40,
   },
-  onLoad() {
+  ready() {
     wx.request({
-      url: `${serverAddress}/api/devices`,
+      url: 'http://114.212.87.5:30822/apis/resource',
       method: 'GET',
       success: ({ data }) => {
         this.setData({
           devices: data,
         })
       },
+      fail: (res) => console.log(res),
     })
   },
-  onItemTap({
-    currentTarget: {
-      dataset: { id },
+  methods: {
+    changeMode() {
+      this.setData({
+        mode: this.data.mode === 'list' ? 'grid' : 'list',
+      })
     },
-  }) {
-    wx.navigateTo({
-      url: `/pages/detail/index?id=${id}`,
-    })
-  },
-  changeMode() {
-    const { mode } = this.data
-    this.setData({
-      mode: mode === 'list' ? 'grid' : 'list',
-    })
-  },
-  toMessage() {
-    wx.navigateTo({
-      url: `/pages/message/index`,
-    })
+    onItemTap({
+      currentTarget: {
+        dataset: { uid },
+      },
+    }) {
+      wx.$.navigation.to('detail', { uid })
+    },
   },
 })

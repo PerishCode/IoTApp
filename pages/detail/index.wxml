@@ -1,5 +1,4 @@
 <view class="container">
-		<view class="title">设备详情</view>
 		<card title="基本信息">
 				<view class="list">
 						<view class="item">
@@ -12,5 +11,25 @@
 						</view>
 				</view>
 		</card>
-		<card title="接口信息"></card>
+		<card title="接口信息">
+				<view class="list">
+						<method title="{{item.method}}" wx:for="{{methods}}" wx:key="method">
+								<!-- <view class="index">{{item.method}}</view> -->
+								<view class="list small">
+										<view class="item method">
+												<view class="index">方法</view>
+												<view class="value">{{item.type}}</view>
+										</view>
+										<view class="item url">
+												<view class="index">URL</view>
+												<view class="value">{{item.url}}</view>
+										</view>
+										<view class="item className">
+												<view class="index">类名</view>
+												<view class="value">{{item.className}}</view>
+										</view>
+								</view>
+						</method>
+				</view>
+		</card>
 </view>

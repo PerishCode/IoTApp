@@ -2,39 +2,42 @@ const {
   globalData: { serverAddress },
 } = getApp()
 
-Page({
-  data: {
-    device: null,
-    methods: [
-      {
-        method: 'getStatus',
-        className: 'com.servicematrix.airpurifier_v2.AirPurifierController',
-        type: 'GET',
-        url: '/api/status',
-      },
-      {
-        method: 'getSpeed',
-        className: 'com.servicematrix.airpurifier_v2.AirPurifierController',
-        type: 'GET',
-        url: '/api/speed',
-      },
-    ],
+Component({
+  properties: {
+    uid: {
+      type: String,
+    },
   },
-  onLoad({ id = 'A' }) {
+  data: {
+    device: {},
+    methods: [],
+  },
+  ready() {
     wx.request({
-      url: `${serverAddress}/api/devices/${id}`,
-      success: ({ data }) => {
-        this.setData({
-          device: data,
+      url: 'http://114.212.87.5:30822/apis/resource',
+      success: ({ data: devices }) => {
+        const device = devices.find((d) => d.uid === this.properties.uid)
+
+        wx.request({
+          url: device.gateway + '/api',
+          success: ({ data: methods }) => {
+            console.log(methods)
+            this.setData({
+              device,
+              methods,
+            })
+          },
         })
       },
     })
   },
-  uploadFile() {
-    wx.chooseMessageFile({
-      success: (res) => {
-        console.log(res.tempFilePath)
-      },
-    })
+  methods: {
+    uploadFile() {
+      wx.chooseMessageFile({
+        success: (res) => {
+          console.log(res.tempFilePath)
+        },
+      })
+    },
   },
 })

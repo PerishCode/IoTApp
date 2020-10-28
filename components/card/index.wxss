@@ -6,13 +6,14 @@
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.251);
   padding: 8px 15px;
+  background-color: rgba(250, 235, 215, 0.115);
 }
 
 .card > .title {
   font-size: 15px;
   font-weight: 700;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.251);
+  border-bottom: 1px solid rgba(36, 33, 33, 0.158);
 }
 
 .icon {

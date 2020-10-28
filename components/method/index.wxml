@@ -1,0 +1,6 @@
+<view class="card {{collapse?'collapsed':'expanded'}}">
+  <view class="title" bind:tap="changeMode">{{title}}</view>
+  <view class="content">
+    <slot />
+  </view>
+</view>

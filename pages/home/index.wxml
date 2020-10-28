@@ -1,30 +1,29 @@
-<!-- index.wxml -->
 <view class="container">
-		<view class="grid" wx:if="{{mode==='grid'}}">
-				<view class="item {{item.bound?'bound':'free'}}" wx:for="{{devices}}" wx:key="index" data-id="{{item.id}}" bind:tap="onItemTap" hover-class="item-hover">
-						<view class="icon" style="width:{{gridIconSize}}px; margin-top:8px;">
-								<iconfont name="{{item.icon}}" size="{{gridIconSize}}" />
-						</view>
-						<view class="name">{{item.name}}</view>
-				</view>
-		</view>
-		<view class="list" wx:else>
-				<view class="item {{item.bound?'bound':'free'}}" wx:for="{{devices}}" wx:key="index" data-id="{{item.id}}" bind:tap="onItemTap" hover-class="item-hover">
-						<view class="icon" style="width:{{listIconSize}}px; margin-top:8px;">
-								<iconfont name="{{item.icon}}" size="{{listIconSize}}" />
-						</view>
-						<view class="content">
-								<view class="name">{{item.name}}</view>
-								<view class="abstract">{{item.abstract}}</view>
-						</view>
-				</view>
-		</view>
-		<view class="title">设备列表</view>
-		<view class="mode" bind:tap="changeMode">
-				<iconfont name="grid" wx:if="{{mode==='list'}}" />
-				<iconfont name="List" wx:else />
-		</view>
-		<view class="message" bind:tap="toMessage">
-				<iconfont name="messagequeue" />
-		</view>
+  <view class="grid" wx:if="{{mode==='grid'}}">
+    <view class="item {{item.bound?'bound':'free'}}" wx:for="{{devices}}" wx:key="index" data-uid="{{item.uid}}" bind:tap="onItemTap" hover-class="item-hover">
+      <view class="icon" style="width:{{gridIconSize}}px; margin-top:8px;">
+        <iconfont name="{{item.icon}}" size="{{gridIconSize}}" />
+      </view>
+      <view class="name">{{item.aliasName}}</view>
+    </view>
+  </view>
+  <view class="list" wx:else>
+    <view class="item {{item.bound?'bound':'free'}}" wx:for="{{devices}}" wx:key="index" data-uid="{{item.uid}}" bind:tap="onItemTap" hover-class="item-hover">
+      <view class="icon" style="width:{{listIconSize}}px; margin-top:8px;">
+        <iconfont name="{{item.icon}}" size="{{listIconSize}}" />
+      </view>
+      <view class="content">
+        <view class="name">{{item.aliasName}}</view>
+        <view class="abstract">{{item.gateway}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="title">设备列表</view>
+  <view class="mode" bind:tap="changeMode">
+    <iconfont name="grid" wx:if="{{mode==='list'}}" />
+    <iconfont name="List" wx:else />
+  </view>
+  <view class="message" bind:tap="toMessage">
+    <iconfont name="messagequeue" />
+  </view>
 </view>

@@ -27,3 +27,21 @@
 .list .item .value {
   float: right;
 }
+
+.list.small .item {
+  font-size: 12px;
+  position: relative;
+  padding: 2px 0px;
+}
+
+.list.small .item .index {
+  display: inline;
+  font-weight: 600;
+}
+
+.item.className .value {
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

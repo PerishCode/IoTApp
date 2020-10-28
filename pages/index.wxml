@@ -1,9 +1,11 @@
 <view class="container">
   <view class="navigator" style="position:absolute; top:{{statusBarHeight}}px; line-height:44px;">
-    导航栏
+    <view class="title" wx:if="{{currentPage==='home'}}">设备列表</view>
+    <view class="title" wx:if="{{currentPage==='detail'}}" bind:tap="back">详细信息</view>
   </view>
   <view class="page" style="position:absolute; top:{{navigationBarHeight}}px; height:calc(100% - {{navigationBarHeight}}px); width:100%;">
-    <test wx:if="{{currentPage==='test'}}" />
-    <view wx:if="{{currentPage==='ding'}}" bind:tap="back">ding</view>
+    <home wx:if="{{currentPage==='home'}}" />
+    <!-- <view wx:if="{{currentPage==='ding'}}" bind:tap="back">ding</view> -->
+    <detail wx:if="{{currentPage==='detail'}}" uid="{{parameters.uid}}" />
   </view>
 </view>
