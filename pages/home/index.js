@@ -7,8 +7,9 @@ const {
 Page({
   data: {
     devices: [],
-    mode: 'grid',
+    mode: 'list',
     gridIconSize: 50,
+    listIconSize: 40,
   },
   onLoad() {
     wx.request({
@@ -22,7 +23,7 @@ Page({
     })
   },
   onItemTap({
-    target: {
+    currentTarget: {
       dataset: { id },
     },
   }) {

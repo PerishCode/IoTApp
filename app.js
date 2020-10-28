@@ -2,6 +2,12 @@
 App({
   onLaunch: function () {
     this.globalData.socketConnected || this.connectSocket()
+
+    // wx.getSystemInfo({
+    //   success: (res) => {
+    //     console.log(res)
+    //   },
+    // })
   },
 
   globalData: {
@@ -14,6 +20,6 @@ App({
     wx.onSocketOpen(() => {
       this.globalData.socketConnected = true
     })
-    wx.connectSocket({ url: this.globalData.MQAddress })
+    // wx.connectSocket({ url: this.globalData.MQAddress })
   },
 })

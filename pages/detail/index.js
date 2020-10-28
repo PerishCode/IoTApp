@@ -5,6 +5,20 @@ const {
 Page({
   data: {
     device: null,
+    methods: [
+      {
+        method: 'getStatus',
+        className: 'com.servicematrix.airpurifier_v2.AirPurifierController',
+        type: 'GET',
+        url: '/api/status',
+      },
+      {
+        method: 'getSpeed',
+        className: 'com.servicematrix.airpurifier_v2.AirPurifierController',
+        type: 'GET',
+        url: '/api/speed',
+      },
+    ],
   },
   onLoad({ id }) {
     wx.request({

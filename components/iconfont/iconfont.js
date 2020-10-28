@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // messagequeue | List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
+    // BluetoothSpeaker | DroneSurveillance | ElectricCar | HandheldConsole | WirelessHeadset | SmartMicrowave | SmartGlasses | SmartTV | Robotics | SmartWatch | messagequeue | List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
     name: {
       type: String,
     },
