@@ -30,4 +30,11 @@ Page({
       },
     })
   },
+  uploadFile() {
+    wx.chooseMessageFile({
+      success: (res) => {
+        console.log(res.tempFilePath)
+      },
+    })
+  },
 })

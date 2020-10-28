@@ -1,7 +1,11 @@
 <view class="container">
-		<view>详细信息</view>
-		<view wx:if="{{device}}">{{device.name}}</view>
-		<view class="list" wx:for="{{methods}}" wx:key="index">
-				<view>{{item.method}}</view>
+	<view>详细信息</view>
+	<view wx:if="{{device}}">{{device.name}}</view>
+	<view class="list" wx:for="{{methods}}" wx:key="index">
+		<view>{{item.method}}</view>
+		<view wx:if="{{item.method==='getStatus'}}">
+			<button bind:tap="uploadFile">一个按钮</button>
 		</view>
+	</view>
 </view>
+

@@ -5,11 +5,11 @@
 }
 
 .grid .free {
-  background-color: rgba(33, 219, 16, 0.363);
+  background-color: rgba(33, 219, 16, 0.163);
 }
 
 .grid .bound {
-  background-color: rgba(219, 97, 16, 0.363);
+  background-color: rgba(194, 197, 25, 0.186);
 }
 
 .grid {
@@ -23,8 +23,8 @@
   flex-basis: calc(25% - 6px);
   /* flex-basis: 25%; */
   margin: 3px;
-  border-radius: 2px 2px;
-  box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.151);
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.251);
   justify-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -68,8 +68,8 @@
   margin: 5px 15px;
 }
 
-.list .item .icon {
-  filter: drop-shadow(1px 1px 3px rgba(17, 15, 17, 0.336));
+.item .icon {
+  filter: drop-shadow(2px 2px 5px rgba(17, 15, 17, 0.436));
 }
 
 .list .item .content {

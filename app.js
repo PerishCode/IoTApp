@@ -11,7 +11,7 @@ App({
   },
 
   globalData: {
-    serverAddress: 'http://192.168.31.202:7777',
+    serverAddress: 'http://192.168.31.154:7777',
     MQAddress: 'ws://114.212.84.64:8083/webSocket',
     socketConnected: false,
   },
