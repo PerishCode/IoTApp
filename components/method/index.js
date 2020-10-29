@@ -3,9 +3,8 @@ Component({
     title: {
       type: String,
     },
-    defaultCollapse: {
-      type: Boolean,
-      value: false,
+    type: {
+      type: String,
     },
   },
   data: {
@@ -13,7 +12,7 @@ Component({
   },
   ready() {
     this.setData({
-      collapse: this.properties.defaultCollapse,
+      collapse: this.properties.type !== 'POST',
     })
   },
   methods: {

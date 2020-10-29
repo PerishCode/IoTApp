@@ -49,7 +49,11 @@ Component({
       const { messageQueue } = this.data
       messageQueue.push(JSON.parse(data))
 
-      console.log(data)
+      wx.showToast({
+        title: data.message,
+        icon: 'success',
+        duration: 1000,
+      })
       this.setData({
         messageQueue,
       })

@@ -10,22 +10,33 @@ Component({
     listIconSize: 40,
   },
   ready() {
-    wx.request({
-      url: 'http://114.212.87.5:30822/apis/resource',
-      method: 'GET',
-      success: ({ data }) => {
-        this.setData({
-          devices: data,
-        })
-      },
-      fail: (res) => {
-        this.setData({
-          err: JSON.stringify(res),
-        })
-      },
+    this.request()
+    this.setData({
+      interval: setInterval(this.request.bind(this), 2000),
     })
   },
+  detached() {
+    clearInterval(this.data.interval)
+  },
   methods: {
+    request() {
+      wx.request({
+        url: 'http://114.212.87.5:30822/apis/resource',
+        method: 'GET',
+        success: ({ data }) => {
+          // console.log(data)
+          this.setData({
+            devices: data,
+          })
+        },
+        fail: (res) => {
+          this.setData({
+            err: JSON.stringify(res),
+          })
+        },
+      })
+    },
+
     changeMode() {
       this.setData({
         mode: this.data.mode === 'list' ? 'grid' : 'list',

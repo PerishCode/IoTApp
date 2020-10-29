@@ -13,30 +13,13 @@ Component({
     methods: [],
   },
   ready() {
-    wx.request({
-      url: 'http://114.212.87.5:30822/apis/resource',
-      success: ({ data: devices }) => {
-        // console.log(devices)
-
-        const device = devices.find((d) => d.uid === this.properties.uid)
-
-        // console.log(device)
-
-        wx.request({
-          url: device.gateway + '/api',
-          success: ({ data: methods }) => {
-            this.setData({
-              device,
-              methods: Array.isArray(methods) ? methods : [],
-            })
-          },
-          header: {
-            Context: '',
-          },
-          fail: (err) => console.log(err),
-        })
-      },
+    this.request()
+    this.setData({
+      interval: setInterval(this.request.bind(this), 2000),
     })
+  },
+  detached() {
+    clearInterval(this.data.interval)
   },
   methods: {
     uploadFile() {
@@ -64,6 +47,32 @@ Component({
           //   methods: Array.isArray(methods) ? methods : [],
           // })
           // console.log(res)
+        },
+      })
+    },
+    request() {
+      wx.request({
+        url: 'http://114.212.87.5:30822/apis/resource',
+        success: ({ data: devices }) => {
+          // console.log(devices)
+
+          const device = devices.find((d) => d.uid === this.properties.uid)
+
+          // console.log(device)
+
+          wx.request({
+            url: device.gateway + '/api',
+            success: ({ data: methods }) => {
+              this.setData({
+                device,
+                methods: Array.isArray(methods) ? methods : [],
+              })
+            },
+            header: {
+              Context: '',
+            },
+            fail: (err) => console.log(err),
+          })
         },
       })
     },
