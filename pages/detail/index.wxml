@@ -30,8 +30,7 @@
 										</view>
 										<view class="item operator" wx:if="{{item.type==='POST'}}">
 												<form data-url="{{item.url}}" catchsubmit="submit">
-														<label for="command">指令</label>
-														<input name="command" />
+														<input name="command" placeholder="请在此处输入命令" />
 														<button form-type="submit">提交</button>
 												</form>
 										</view>

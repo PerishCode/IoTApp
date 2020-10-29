@@ -16,7 +16,11 @@ Component({
     wx.request({
       url: 'http://114.212.87.5:30822/apis/resource',
       success: ({ data: devices }) => {
+        // console.log(devices)
+
         const device = devices.find((d) => d.uid === this.properties.uid)
+
+        // console.log(device)
 
         wx.request({
           url: device.gateway + '/api',
@@ -26,6 +30,10 @@ Component({
               methods: Array.isArray(methods) ? methods : [],
             })
           },
+          header: {
+            Context: '',
+          },
+          fail: (err) => console.log(err),
         })
       },
     })

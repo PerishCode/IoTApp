@@ -34,10 +34,14 @@ Component({
     this.setData({
       statusBarHeight,
       navigationBarHeight,
-      pageStack: ['home', 'message'],
-      currentPage: 'message',
+      // pageStack: ['home', 'message'],
+      // currentPage: 'message',
+      // pageStack: ['home', 'detail'],
+      // currentPage: 'detail',
+      pageStack: ['home'],
+      currentPage: 'home',
       parameters: {
-        uid: 'e2f1eccd-9191-46ea-971b-2a565143a4c8',
+        uid: '927d4728-d328-4c97-ae54-5fc286cecf38',
       },
     })
 
