@@ -18,7 +18,7 @@
       </view>
     </view>
   </view>
-  <view class="title">设备列表</view>
+  <view>{{err}}</view>
   <view class="mode" bind:tap="changeMode">
     <iconfont name="grid" wx:if="{{mode==='list'}}" />
     <iconfont name="List" wx:else />

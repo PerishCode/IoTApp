@@ -3,8 +3,25 @@ const {
 } = getApp()
 
 Component({
-  properties: {},
-  data: {},
+  data: {
+    messageQueue: [
+      {
+        producer: 'airPurifier',
+        message: 'airPurifier has been turn off.',
+        consumer: 'people',
+      },
+      {
+        producer: 'airPurifier',
+        message: 'airPurifier has been turn off.',
+        consumer: 'people',
+      },
+      {
+        producer: 'airPurifier',
+        message: 'airPurifier has been turn off.',
+        consumer: 'people',
+      },
+    ],
+  },
   ready() {
     const { back, to } = this.__proto__
 
@@ -17,9 +34,21 @@ Component({
     this.setData({
       statusBarHeight,
       navigationBarHeight,
-      pageStack: ['home'],
-      currentPage: 'home',
-      parameters: {},
+      pageStack: ['home', 'message'],
+      currentPage: 'message',
+      parameters: {
+        uid: 'e2f1eccd-9191-46ea-971b-2a565143a4c8',
+      },
+    })
+
+    wx.onSocketMessage(({ data }) => {
+      const { messageQueue } = this.data
+      messageQueue.push(JSON.parse(data))
+
+      console.log(data)
+      this.setData({
+        messageQueue,
+      })
     })
   },
   methods: {
@@ -28,7 +57,7 @@ Component({
 
       if (pageStack.length > 1) {
         pageStack.splice(-1, 1)
-        context.setData({
+        this.setData({
           pageStack,
           currentPage: pageStack[pageStack.length - 1],
         })

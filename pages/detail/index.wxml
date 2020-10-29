@@ -13,7 +13,7 @@
 		</card>
 		<card title="接口信息">
 				<view class="list">
-						<method title="{{item.method}}" wx:for="{{methods}}" wx:key="method">
+						<method title="{{item.method}}" wx:for="{{methods}}" wx:key="method" defaultCollapse="{{item.type!=='POST'}}">
 								<!-- <view class="index">{{item.method}}</view> -->
 								<view class="list small">
 										<view class="item method">
@@ -27,6 +27,13 @@
 										<view class="item className">
 												<view class="index">类名</view>
 												<view class="value">{{item.className}}</view>
+										</view>
+										<view class="item operator" wx:if="{{item.type==='POST'}}">
+												<form data-url="{{item.url}}" catchsubmit="submit">
+														<label for="command">指令</label>
+														<input name="command" />
+														<button form-type="submit">提交</button>
+												</form>
 										</view>
 								</view>
 						</method>

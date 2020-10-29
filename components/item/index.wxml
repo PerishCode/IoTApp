@@ -1,5 +1,0 @@
-<view class="item">
-	<iconfont name="{{icon}}" />
-	<view class="title">{{title}}</view>
-</view>
-

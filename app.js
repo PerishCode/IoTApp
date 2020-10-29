@@ -13,7 +13,7 @@ App({
 
   globalData: {
     serverAddress: 'http://192.168.31.202:7777',
-    MQAddress: 'ws://114.212.84.64:8083/webSocket',
+    MQAddress: 'ws://114.212.87.5:30880/webSocket',
     socketConnected: false,
   },
 
@@ -21,6 +21,8 @@ App({
     wx.onSocketOpen(() => {
       this.globalData.socketConnected = true
     })
-    // wx.connectSocket({ url: this.globalData.MQAddress })
+    wx.connectSocket({
+      url: this.globalData.MQAddress,
+    })
   },
 })

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "home": "/pages/home/index",
-    "detail": "/pages/detail/index"
+    "detail": "/pages/detail/index",
+    "message": "/pages/message/index"
   }
 }

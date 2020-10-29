@@ -20,8 +20,7 @@
 }
 
 .grid .item {
-  flex-basis: calc(25% - 6px);
-  /* flex-basis: 25%; */
+  width: calc(25% - 6px);
   margin: 3px;
   border-radius: 3px;
   box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.251);
@@ -29,18 +28,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: rgba(136, 118, 108, 0.023); */
+  position: relative;
+  background-color: white;
 }
 
 .grid .item .name {
   text-align: center;
   font-size: 13px;
-  padding: 6px 2px;
+  padding: 6px 10px;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60px;
 }
 
 .grid .item-hover .icon {
-  /* background-color: rgba(97, 235, 120, 0.24); */
   filter: drop-shadow(0 0 7px rgba(211, 12, 184, 0.767));
 }
 
@@ -49,21 +52,22 @@
   padding-bottom: 8px;
   padding-top: 6px;
   margin: 0px 15px;
-  border-bottom: 1px solid rgba(43, 41, 41, 0.404);
+  padding-left: 8px;
+  margin-top: 3px;
+  box-shadow: 2px 2px 2px rgba(15, 26, 27, 0.404);
+  border-radius: 2px;
+  background-color: white;
 }
 
 .list .bound .name {
   color: rgba(219, 97, 16, 0.763);
-  /* border-bottom: 1px solid rgba(219, 97, 16, 0.363); */
 }
 
 .list .free .name {
   color: rgba(13, 97, 6, 0.763);
-  /* border-bottom: 2px solid rgba(33, 219, 16, 0.363); */
 }
 
 .list .item-hover {
-  /* box-shadow: 0 0 2px 2px rgba(70, 216, 40, 0.404); */
   background-color: rgba(95, 158, 160, 0.212);
   margin: 5px 15px;
 }

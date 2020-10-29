@@ -1,3 +1,0 @@
-<view class="message">
-  <view wx:for="{{messageQueue}}" wx:key="index">{{item}}</view>
-</view>

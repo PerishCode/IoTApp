@@ -18,7 +18,11 @@ Component({
           devices: data,
         })
       },
-      fail: (res) => console.log(res),
+      fail: (res) => {
+        this.setData({
+          err: JSON.stringify(res),
+        })
+      },
     })
   },
   methods: {
@@ -32,7 +36,12 @@ Component({
         dataset: { uid },
       },
     }) {
+      // console.log(uid)
+
       wx.$.navigation.to('detail', { uid })
+    },
+    toMessage() {
+      wx.$.navigation.to('message')
     },
   },
 })

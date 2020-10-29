@@ -21,10 +21,9 @@ Component({
         wx.request({
           url: device.gateway + '/api',
           success: ({ data: methods }) => {
-            console.log(methods)
             this.setData({
               device,
-              methods,
+              methods: Array.isArray(methods) ? methods : [],
             })
           },
         })
@@ -36,6 +35,27 @@ Component({
       wx.chooseMessageFile({
         success: (res) => {
           console.log(res.tempFilePath)
+        },
+      })
+    },
+    submit({
+      currentTarget: {
+        dataset: { url },
+      },
+      detail: {
+        value: { command },
+      },
+    }) {
+      wx.request({
+        url: this.data.device.gateway + url + `?value=${command}`,
+        method: 'POST',
+        success: (res) => {
+          // console.log(methods)
+          // this.setData({
+          //   device,
+          //   methods: Array.isArray(methods) ? methods : [],
+          // })
+          // console.log(res)
         },
       })
     },

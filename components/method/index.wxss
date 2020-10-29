@@ -13,9 +13,10 @@
 .card.expanded > .title {
   font-size: 14px;
   font-weight: 700;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  padding: 5px 0px;
+  margin-left: 5px;
+  width: calc(100% - 10px);
+  border-bottom: 1px solid gray;
 }
 
 .card.collapsed > .title {

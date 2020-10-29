@@ -1,0 +1,11 @@
+<view class="item">
+  <view class="message">
+    <view class="content">{{item.message}}</view>
+  </view>
+  <view class="producer">
+    <view class="content">{{item.producer}}</view>
+  </view>
+  <view class="consumer">
+    <view class="content">{{item.consumer}}</view>
+  </view>
+</view>

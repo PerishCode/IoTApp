@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="list">
+    <!-- <view wx:for="{{messageQueue}}" wx:key="index" class="item">
+      <view class="message">
+        <view class="content">{{item.message}}</view>
+      </view>
+      <view class="producer">
+        <view class="content">{{item.producer}}</view>
+      </view>
+      <view class="consumer">
+        <view class="content">{{item.consumer}}</view>
+      </view>
+    </view> -->
+    <message wx:for="{{messageQueue}}" wx:key="index" item="{{item}}" />
+  </view>
+</view>

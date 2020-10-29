@@ -11,6 +11,8 @@
     // "project.config.json": true,
     "sitemap.json": true,
     ".prettierrc.yml": true,
-    ".vscode": true
+    ".vscode": true,
+    "app.*": true,
+    "*.json": true
   }
 }

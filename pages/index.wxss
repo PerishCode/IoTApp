@@ -1,0 +1,21 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgb(15, 80, 73) 30%,
+    rgb(173, 211, 216) 100%
+  );
+}
+
+.navigator {
+  width: 100%;
+}
+
+.navigator .title {
+  line-height: 44px;
+  margin-left: 15px;
+  /* text-align: center; */
+  font-size: 20px;
+  font-weight: 700;
+}
