@@ -1,33 +1,34 @@
 .item {
   border-radius: 3px;
-  display: grid;
+  /* display: grid;
   gap: 5px;
   grid-template-columns: repeat(1fr, 20);
-  grid-template-rows: repeat(1fr, 2);
+  grid-template-rows: repeat(1fr, 2); */
   background-color: rgba(255, 255, 255, 0.788);
   margin-top: 5px;
   padding: 5px;
   padding-bottom: none;
 }
 
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .message {
-  grid-row: 1/3;
-  grid-column: 1/17;
+  /* grid-row: 1/3;
+  grid-column: 1/17; */
+  padding: 2px;
 }
 
-.producer {
-  grid-row: 1/2;
-  grid-column: 17/20;
-}
-
+.producer,
 .consumer {
-  grid-row: 2/3;
-  grid-column: 17/20;
+  padding: 2px;
 }
 
 .producer .content,
 .consumer .content {
   font-size: 13px;
-  text-align: right;
   width: 100%;
 }

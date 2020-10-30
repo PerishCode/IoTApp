@@ -1,7 +1,7 @@
 <view class="container">
 	<view class="navigator" style="position:absolute; top:{{statusBarHeight}}px; line-height:44px;">
 		<view class="title">
-			<view style="height: 18px; margin-right: 5px; margin-top: 4px;" wx:if="{{currentPage!=='home'}}" bind:tap="back">
+			<view style="height: 18px; margin-right: 5px; margin-top: 3px;" wx:if="{{currentPage!=='home'}}" bind:tap="back">
 				<iconfont name="back" />
 			</view>
 			<view wx:if="{{currentPage==='home'}}">设备列表</view>

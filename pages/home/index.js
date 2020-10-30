@@ -27,7 +27,7 @@ Component({
         success: ({ data: visibleList }) => {
           const visibleSet = new Set(visibleList)
 
-          console.log(visibleSet)
+          // console.log(visibleSet)
 
           wx.request({
             url: 'http://114.212.87.5:30822/apis/resource',
@@ -56,6 +56,11 @@ Component({
     },
     toMessage() {
       wx.$.navigation.to('message')
+      // wx.showToast({
+      //   title: '已成功发起调用',
+      //   icon: 'success',
+      //   duration: 1000,
+      // })
     },
   },
 })

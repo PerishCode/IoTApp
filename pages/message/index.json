@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "message": "/components/message/index"
+    "message": "/components/message/index",
+    "method": "/components/method/index",
+    "iconfont": "/components/iconfont/iconfont"
   },
   "component": true
 }

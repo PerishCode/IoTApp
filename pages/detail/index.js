@@ -47,6 +47,12 @@ Component({
           //   methods: Array.isArray(methods) ? methods : [],
           // })
           console.log(res)
+
+          wx.showToast({
+            title: '已成功发起调用',
+            icon: 'success',
+            duration: 1000,
+          })
         },
       })
     },

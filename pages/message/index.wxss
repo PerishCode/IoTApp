@@ -4,7 +4,47 @@
 }
 
 .list {
+  height: calc(100% - 30px);
+  /* padding-bottom: 15px; */
   display: flex;
   flex-direction: column;
   padding: 15px;
+  overflow: scroll;
+}
+
+.card {
+  width: calc(100% - 30px);
+  /* margin: 15px; */
+  position: relative;
+  margin: 3px 15px;
+
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.151);
+  /* padding: 8px 15px; */
+}
+
+.card.expanded > .title {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 0px;
+  margin-left: 5px;
+  width: calc(100% - 10px);
+  border-bottom: 1px solid gray;
+}
+
+.card.collapsed > .title {
+  font-size: 13px;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.card.collapsed .content view {
+  display: none;
+}
+
+.card .content {
+  padding: 5px;
+  padding-top: 0px;
 }

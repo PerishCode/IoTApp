@@ -20,6 +20,8 @@ App({
   connectSocket() {
     wx.onSocketOpen(() => {
       this.globalData.socketConnected = true
+
+      console.log('connected')
     })
     wx.connectSocket({
       url: this.globalData.MQAddress,

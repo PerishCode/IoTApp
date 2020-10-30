@@ -1,6 +1,16 @@
 <view class="container">
+	<!-- <view class="card {{collapse?'collapsed':'expanded'}}">
+		<view class="title" bind:tap="changeMode">筛选条件</view>
+		<view class="content" >
+      
+      
+    </view>
+	</view> -->
 	<view class="list">
 		<message wx:for="{{messageQueue}}" wx:key="index" item="{{item}}" />
 	</view>
+	<!-- <view class="mode">
+		<picker mode="selector" value="{{currentMode}}" range="{{modes}}">切换显示模式</picker>
+	</view> -->
 </view>
 

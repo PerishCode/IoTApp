@@ -4,23 +4,24 @@ const {
 
 Component({
   data: {
-    messageQueue: [
-      {
-        producer: 'airPurifier',
-        message: 'airPurifier has been turn off.',
-        consumer: 'people',
-      },
-      {
-        producer: 'airPurifier',
-        message: 'airPurifier has been turn off.',
-        consumer: 'people',
-      },
-      {
-        producer: 'airPurifier',
-        message: 'airPurifier has been turn off.',
-        consumer: 'people',
-      },
-    ],
+    // messageQueue: [
+    //   {
+    //     producer: 'airPurifier',
+    //     message: 'airPurifier has been turn off.',
+    //     consumer: 'people',
+    //   },
+    //   {
+    //     producer: 'airPurifier',
+    //     message: 'airPurifier has been turn off.',
+    //     consumer: 'people',
+    //   },
+    //   {
+    //     producer: 'airPurifier',
+    //     message: 'airPurifier has been turn off.',
+    //     consumer: 'people',
+    //   },
+    // ],
+    messageQueue: [],
   },
   ready() {
     const { back, to } = this.__proto__
@@ -34,26 +35,26 @@ Component({
     this.setData({
       statusBarHeight,
       navigationBarHeight,
-      // pageStack: ['home', 'message'],
-      // currentPage: 'message',
+      pageStack: ['home', 'message'],
+      currentPage: 'message',
       // pageStack: ['home', 'detail'],
       // currentPage: 'detail',
-      pageStack: ['home'],
-      currentPage: 'home',
+      // pageStack: ['home'],
+      // currentPage: 'home',
       parameters: {
         uid: '927d4728-d328-4c97-ae54-5fc286cecf38',
       },
     })
 
     wx.onSocketMessage(({ data }) => {
-      const { messageQueue } = this.data
-      messageQueue.push(JSON.parse(data))
+      // console.log(data)
 
-      wx.showToast({
-        title: data.message,
-        icon: 'success',
-        duration: 1000,
-      })
+      const { messageQueue } = this.data
+
+      const message = JSON.parse(data)
+
+      if (message.consumer != 'mq') messageQueue.push(message)
+
       this.setData({
         messageQueue,
       })
