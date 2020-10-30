@@ -46,7 +46,7 @@ Component({
           //   device,
           //   methods: Array.isArray(methods) ? methods : [],
           // })
-          // console.log(res)
+          console.log(res)
         },
       })
     },

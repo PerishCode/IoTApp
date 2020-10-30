@@ -1,47 +1,41 @@
 <view class="container">
-	<card title="基本信息">
-		<view class="list">
-			<view class="item">
-				<view class="index">设备名称</view>
-				<view class="value">{{device.name}}</view>
-			</view>
-			<view class="item">
-				<view class="index">设备状态</view>
-				<view class="value">{{device.bound?'忙碌':'空闲'}}</view>
-			</view>
-		</view>
-	</card>
-	<card title="接口信息">
-		<view class="list">
-			<method
-			 title="{{item.method}}"
-			 wx:for="{{methods}}"
-			 wx:key="method"
-			 type="{{item.type}}"
-			>
-				<!-- <view class="index">{{item.method}}</view> -->
-				<view class="list small">
-					<view class="item method">
-						<view class="index">方法</view>
-						<view class="value">{{item.type}}</view>
-					</view>
-					<view class="item url">
-						<view class="index">URL</view>
-						<view class="value">{{item.url}}</view>
-					</view>
-					<view class="item className">
-						<view class="index">类名</view>
-						<view class="value">{{item.className}}</view>
-					</view>
-					<view class="item operator" wx:if="{{item.type==='POST'}}">
-						<form data-url="{{item.url}}" catchsubmit="submit">
-							<input name="command" placeholder="请在此处输入命令" />
-							<button form-type="submit">提交</button>
-						</form>
-					</view>
+		<card title="基本信息">
+				<view class="list">
+						<view class="item">
+								<view class="index">设备名称</view>
+								<view class="value">{{device.name}}</view>
+						</view>
+						<view class="item">
+								<view class="index">设备状态</view>
+								<view class="value">{{device.bound?'忙碌':'空闲'}}</view>
+						</view>
 				</view>
-			</method>
-		</view>
-	</card>
+		</card>
+		<card title="接口信息">
+				<view class="list">
+						<method title="{{item.method}}" wx:for="{{methods}}" wx:key="method" type="{{item.type}}">
+								<!-- <view class="index">{{item.method}}</view> -->
+								<view class="list small">
+										<view class="item method">
+												<view class="index">方法</view>
+												<view class="value">{{item.type}}</view>
+										</view>
+										<view class="item url">
+												<view class="index">URL</view>
+												<view class="value">{{item.url}}</view>
+										</view>
+										<view class="item className">
+												<view class="index">类名</view>
+												<view class="value">{{item.className}}</view>
+										</view>
+										<view class="item operator" wx:if="{{item.type==='POST'}}">
+												<form data-url="{{item.url}}" catchsubmit="submit">
+														<input name="command" style="display:none;" placeholder="请在此处输入命令" />
+														<button form-type="submit">Call</button>
+												</form>
+										</view>
+								</view>
+						</method>
+				</view>
+		</card>
 </view>
-
