@@ -23,6 +23,9 @@
     <iconfont name="grid" wx:if="{{mode==='list'}}" />
     <iconfont name="List" wx:else />
   </view>
+  <view class="information" bind:tap="toInformation">
+    <iconfont name="zhuye" />
+  </view>
   <view class="message" bind:tap="toMessage">
     <iconfont name="messagequeue" />
   </view>

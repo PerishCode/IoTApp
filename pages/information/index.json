@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "iconfont": "/components/iconfont/iconfont",
+    "card": "/components/card/index",
+    "method": "/components/method/index"
+  },
+  "component": true
+}

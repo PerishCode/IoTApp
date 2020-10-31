@@ -28,12 +28,12 @@
 												<view class="index">类名</view>
 												<view class="value">{{item.className}}</view>
 										</view>
-										<!-- <view class="item operator" wx:if="{{item.method==='toggle'}}">
+										<view class="item operator">
 												<form data-url="{{item.url}}" catchsubmit="submit">
 														<input name="command" placeholder="请在此处输入命令" />
 														<button form-type="submit">Call</button>
 												</form>
-										</view> -->
+										</view>
 								</view>
 						</method>
 				</view>

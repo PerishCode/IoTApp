@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // right | back | worker | Purifier | Up | BluetoothSpeaker | DroneSurveillance | ElectricCar | HandheldConsole | WirelessHeadset | SmartMicrowave | SmartGlasses | SmartTV | Robotics | SmartWatch | messagequeue | List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
+    // zhuye | right | back | worker | Purifier | Up | BluetoothSpeaker | DroneSurveillance | ElectricCar | HandheldConsole | WirelessHeadset | SmartMicrowave | SmartGlasses | SmartTV | Robotics | SmartWatch | messagequeue | List | grid | SmartWashingMachine | SmartCare | SmartProductManagement
     name: {
       type: String,
     },

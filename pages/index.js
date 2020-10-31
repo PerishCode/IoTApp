@@ -35,12 +35,12 @@ Component({
     this.setData({
       statusBarHeight,
       navigationBarHeight,
-      pageStack: ['home', 'message'],
-      currentPage: 'message',
+      // pageStack: ['home', 'message'],
+      // currentPage: 'message',
       // pageStack: ['home', 'detail'],
       // currentPage: 'detail',
-      // pageStack: ['home'],
-      // currentPage: 'home',
+      pageStack: ['home'],
+      currentPage: 'home',
       parameters: {
         uid: '927d4728-d328-4c97-ae54-5fc286cecf38',
       },
@@ -53,7 +53,9 @@ Component({
 
       const message = JSON.parse(data)
 
-      if (message.consumer != 'mq') messageQueue.push(message)
+      // if (message.consumer != 'mq')
+
+      messageQueue.push(message)
 
       this.setData({
         messageQueue,

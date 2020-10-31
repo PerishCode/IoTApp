@@ -37,15 +37,6 @@ Component({
         value: { command },
       },
     }) {
-      // console.log(command)
-
-      // if (url.includes('turnon'))
-      //   url =
-      //     'http://114.212.87.5:30810/people/api/toggle?value=turn on the machine'
-      // if (url.includes('turnoff'))
-      //   url =
-      //     'http://114.212.87.5:30810/people/api/toggle?value=turn off the machine'
-
       wx.request({
         url: this.data.device.gateway + url + `?value=${command}`,
         // url,
@@ -72,7 +63,9 @@ Component({
         success: ({ data: devices }) => {
           // console.log(devices)
 
-          const device = devices.find((d) => d.uid === this.properties.uid)
+          const device = devices.find(
+            (d) => d.uid === '3965a2e2-9655-45c4-b804-7e91469da381'
+          )
 
           // console.log(device)
 

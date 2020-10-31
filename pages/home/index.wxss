@@ -113,6 +113,12 @@
   right: 16px;
 }
 
+.information {
+  position: absolute;
+  bottom: 14px;
+  right: calc(50% - 9px);
+}
+
 .message {
   position: absolute;
   bottom: 14px;

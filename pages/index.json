@@ -3,6 +3,7 @@
     "home": "/pages/home/index",
     "detail": "/pages/detail/index",
     "message": "/pages/message/index",
+    "information": "/pages/information/index",
     "iconfont": "/components/iconfont/iconfont"
   }
 }

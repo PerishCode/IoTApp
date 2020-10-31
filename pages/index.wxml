@@ -1,18 +1,19 @@
 <view class="container">
-	<view class="navigator" style="position:absolute; top:{{statusBarHeight}}px; line-height:44px;">
-		<view class="title">
-			<view style="height: 18px; margin-right: 5px; margin-top: 3px;" wx:if="{{currentPage!=='home'}}" bind:tap="back">
-				<iconfont name="back" />
-			</view>
-			<view wx:if="{{currentPage==='home'}}">设备列表</view>
-			<view wx:if="{{currentPage==='detail'}}">设备信息</view>
-			<view wx:if="{{currentPage==='message'}}">消息队列</view>
+		<view class="navigator" style="position:absolute; top:{{statusBarHeight}}px; line-height:44px;">
+				<view class="title">
+						<view style="height: 18px; margin-right: 5px; margin-top: 3px;" wx:if="{{currentPage!=='home'}}" bind:tap="back">
+								<iconfont name="back" />
+						</view>
+						<view wx:if="{{currentPage==='home'}}">设备列表</view>
+						<view wx:if="{{currentPage==='detail'}}">设备信息</view>
+						<view wx:if="{{currentPage==='message'}}">消息队列</view>
+						<view wx:if="{{currentPage==='information'}}">个人主页</view>
+				</view>
 		</view>
-	</view>
-	<view class="page" style="position:absolute; top:{{navigationBarHeight}}px; height:calc(100% - {{navigationBarHeight}}px); width:100%;">
-		<home wx:if="{{currentPage==='home'}}" />
-		<detail wx:if="{{currentPage==='detail'}}" uid="{{parameters.uid}}" />
-		<message wx:if="{{currentPage==='message'}}" messageQueue="{{messageQueue}}" />
-	</view>
+		<view class="page" style="position:absolute; top:{{navigationBarHeight}}px; height:calc(100% - {{navigationBarHeight}}px); width:100%;">
+				<home wx:if="{{currentPage==='home'}}" />
+				<detail wx:if="{{currentPage==='detail'}}" uid="{{parameters.uid}}" />
+				<message wx:if="{{currentPage==='message'}}" messageQueue="{{messageQueue}}" />
+				<information wx:if="{{currentPage==='information'}}" />
+		</view>
 </view>
-

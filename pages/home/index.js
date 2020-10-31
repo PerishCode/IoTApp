@@ -28,13 +28,17 @@ Component({
           const visibleSet = new Set(visibleList)
 
           // console.log(visibleSet)
+          // visibleSet.add('3965a2e2-9655-45c4-b804-7e91469da381')
 
           wx.request({
             url: 'http://114.212.87.5:30822/apis/resource',
             method: 'GET',
             success: ({ data: devices }) => {
+              // console.log(devices)
+
               this.setData({
                 devices: devices.filter((d) => visibleSet.has(d.uid)),
+                // devices,
               })
             },
           })
@@ -56,11 +60,9 @@ Component({
     },
     toMessage() {
       wx.$.navigation.to('message')
-      // wx.showToast({
-      //   title: '已成功发起调用',
-      //   icon: 'success',
-      //   duration: 1000,
-      // })
+    },
+    toInformation() {
+      wx.$.navigation.to('information')
     },
   },
 })
